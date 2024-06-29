@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profit Prediction</title>
+</head>
+<body>
+   
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    Company Profit Prediction
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('home')}}" method="POST">
+                <div class="input">
+                    <input name="City" type="string" step="any"  class="input-field" required/>
+                    <label  class="input-label"> City Name</label>
+                </div>
+                            <div class="input">
+                    <input name="R&D" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">R&D Spend</label>
+                </div>
+                            <div class="input">
+                    <input name="Adminstration" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Adminstration</label>
+                </div>
+                <div class="input">
+                    <input name="Marketing" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Marketing Spend</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center><p style="color: darkred; font-weight: bold;">Predicted Profit: {{ prediction }} $</p>      
+</center>
+        </div>
+    </div>
+    
+</body>
+</html>
